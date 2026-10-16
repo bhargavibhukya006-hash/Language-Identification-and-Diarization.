@@ -1,0 +1,43 @@
+# Virtual environment (do not commit)
+.venv/
+venv/
+env/
+
+# Generated training artefacts (large, dataset-dependent)
+fine_tune_Results/
+chinese_audio_metadata.csv
+english_audio_metadata.csv
+train_loss.txt
+val_accuracy.txt
+train_accuracy.txt
+accuracy_plot.png
+loss_plot.png
+roc_curve_manual.png
+chinese_clip_*.wav
+english_clip_*.wav
+
+# Audio dataset (not included in repo — download separately)
+_audio/
+
+# Generated VAD / LI output CSVs (produced at runtime)
+labels/vad_all_segments_all_audios.csv
+labels/classified_segments_all.csv
+labels/classified_segments_opp.csv
+labels/vadPred.csv
+labels/TrueLabelUp.csv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

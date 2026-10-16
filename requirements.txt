@@ -1,0 +1,51 @@
+# =============================================================================
+# requirements.txt — Language Identification and Diarization
+# Python 3.11.x  |  Tested on Windows 10/11
+# =============================================================================
+#
+# Install into an isolated virtual environment:
+#
+#   python -m venv .venv
+#   .venv\Scripts\activate          # Windows PowerShell
+#
+#   # Install PyTorch (CPU-only — sufficient for inference, very slow for training)
+#   pip install torch==2.10.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+#
+#   # Install remaining dependencies
+#   pip install -r requirements.txt
+#
+# For GPU training (recommended for fine-tuning HuBERT Large):
+#   pip install torch==2.10.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu121
+#
+# pyannote-audio requires accepting model terms on HuggingFace before use:
+#   https://hf.co/pyannote/voice-activity-detection
+# Set your HF token as an environment variable (never hardcode it):
+#   PowerShell:  $env:HF_TOKEN = "your_token_here"
+#   CMD:         set HF_TOKEN=your_token_here
+# =============================================================================
+
+# Core ML — listed separately above for --index-url; listed here for reference
+# torch==2.10.0
+# torchaudio==2.10.0
+
+# Hugging Face models (compatible with torch 2.x, verified against PyPI metadata)
+transformers==4.46.3
+
+# Audio processing
+pydub==0.25.1
+soundfile>=0.12.1
+
+# Voice Activity Detection pipeline (requires HF token + model license acceptance)
+# pyannote-audio 4.0.7 is verified compatible with PyTorch/torchaudio 2.8+
+pyannote-audio==4.0.7
+
+# Jupyter (to run .ipynb notebooks)
+ipykernel
+jupyter
+
+# Already installed in system Python (pinned for venv reproducibility)
+numpy==2.2.3
+pandas==2.2.3
+matplotlib==3.10.0
+scikit-learn==1.7.1
+tqdm==4.67.1
